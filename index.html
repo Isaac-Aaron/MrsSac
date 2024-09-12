@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Dia del programador</title>
+    </head>
+    <body>
+        <div class="centered">
+            <button class="button" id="mainButton" onclick="playAudioAndShowVideo()">I'm stronger I'm smarter I'm better I'm better!</button>
+            <audio id="myAudio" onended="showSecondButton()">
+                <source src="ssstik.io_1726168879764.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <div id="firstVideoContainer" class="hidden">
+                <video id="firstVideo" onended="showSecondButton()" muted>
+                    <source src="VID-20240418-WA0019.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            
+            <button id="secondButton" class="second-button" onclick="showSecondVideo()">Toca aquí</button>
+            
+            <div id="secondVideoContainer" class="hidden">
+                <video id="secondVideo" onended="showTimeTextAndVideo()">
+                    <source src="VID-20240727-WA0025.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div id="secondVideoText">Si soy</div>
+            </div>
+
+            <div id="timeTextContainer" class="hidden">
+                <h2>¿A qué hora jugamos?</h2>
+                <video id="timeVideo" onended="showThirdVideo()">
+                    <source src="Vídeo sin título ‐ Hecho con Clipchamp.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <div id="thirdVideoContainer" class="hidden">
+                <video id="thirdVideo" onended="showFourthVideo()">
+                    <source src="xokasedit.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div id="thirdVideoText">Laura no dejándose ganar</div>
+            </div>
+
+            <div id="fourthVideoContainer" class="hidden">
+                <video id="fourthVideo">
+                    <source src="memerespirando.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div id="fourthVideoText">Nosotros</div>
+            </div>
+        </div>
+
+        <script>
+            var audio = document.getElementById("myAudio");
+            var firstVideoContainer = document.getElementById("firstVideoContainer");
+            var firstVideo = document.getElementById("firstVideo");
+            var secondButton = document.getElementById("secondButton");
+            var secondVideoContainer = document.getElementById("secondVideoContainer");
+            var secondVideo = document.getElementById("secondVideo");
+            var mainButton = document.getElementById("mainButton");
+            var timeTextContainer = document.getElementById("timeTextContainer");
+            var timeVideo = document.getElementById("timeVideo");
+            var thirdVideoContainer = document.getElementById("thirdVideoContainer");
+            var thirdVideo = document.getElementById("thirdVideo");
+            var fourthVideoContainer = document.getElementById("fourthVideoContainer");
+            var fourthVideo = document.getElementById("fourthVideo");
+
+            function playAudioAndShowVideo() {
+                audio.play();
+                firstVideoContainer.classList.remove("hidden");
+                firstVideoContainer.classList.add("show-video", "funny-spin-in");
+                firstVideo.play();
+                mainButton.classList.add("hide-button");
+            }
+
+            function showSecondButton() {
+                secondButton.classList.add("show-button", "spin-in");
+            }
+
+            function showSecondVideo() {
+                firstVideoContainer.classList.remove("show-video");
+                firstVideoContainer.classList.add("hidden");
+                secondVideoContainer.classList.remove("hidden");
+                secondVideoContainer.classList.add("show-video", "spin-in");
+                secondVideo.play();
+
+                secondButton.classList.add("hide-button");
+                secondButton.classList.remove("show-button");
+            }
+
+            function showTimeTextAndVideo() {
+                secondVideoContainer.classList.remove("show-video");
+                secondVideoContainer.classList.add("hidden");
+                timeTextContainer.classList.remove("hidden");
+                timeTextContainer.classList.add("show-text", "spin-in");
+                timeVideo.play();
+            }
+
+            function showThirdVideo() {
+                timeTextContainer.classList.remove("show-text");
+                timeTextContainer.classList.add("hidden");
+                thirdVideoContainer.classList.remove("hidden");
+                thirdVideoContainer.classList.add("show-video", "spin-in");
+                thirdVideo.play();
+            }
+
+            function showFourthVideo() {
+                thirdVideoContainer.classList.remove("show-video");
+                thirdVideoContainer.classList.add("hidden");
+                fourthVideoContainer.classList.remove("hidden");
+                fourthVideoContainer.classList.add("show-video", "spin-in");
+                fourthVideo.play();
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
